@@ -11,12 +11,15 @@ TARGET_SCREEN_WIDTH := 480
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
+PRODUCT_COPY_FILES +=  \
+    vendor/cm/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+
 # Inherit device configuration
 $(call inherit-product, device/samsung/s2ve/full_s2ve.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := s2ve
-PRODUCT_NAME := full_s2ve
+PRODUCT_NAME := cm_s2ve
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-I9105
 PRODUCT_MANUFACTURER := samsung
