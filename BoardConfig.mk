@@ -7,7 +7,7 @@ USE_CAMERA_STUB := true
 -include device/samsung/galaxys2plus-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_s2vep_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_s2ve_defconfig
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
