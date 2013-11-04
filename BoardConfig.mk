@@ -16,3 +16,4 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/s2ve/bluetooth
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_RECOVERY_INITRC := device/samsung/s2vep/rootdir/init.recovery.capri_ss_s2ve.rc
