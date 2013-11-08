@@ -1,4 +1,4 @@
-$(call inherit-product-if-exists, vendor/samsung/s2vep/s2vep-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/galaxys2plus-common/common-vendor.mk)
 
 # Inherit common device configuration
 $(call inherit-product, device/samsung/galaxys2plus-common/device.mk)
