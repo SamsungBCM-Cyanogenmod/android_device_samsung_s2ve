@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/samsung/s2vep/BoardConfigVendor.mk
+-include vendor/samsung/galaxys2plus-common/BoardConfigVendor.mk
 
 # inherit from the common version
 -include device/samsung/galaxys2plus-common/BoardConfigCommon.mk
