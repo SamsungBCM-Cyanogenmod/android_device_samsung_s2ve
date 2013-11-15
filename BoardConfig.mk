@@ -7,6 +7,9 @@ USE_CAMERA_STUB := true
 -include device/samsung/galaxys2plus-common/BoardConfigCommon.mk
 
 # Kernel
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200n8 mem=832M@0xA2000000 androidboot.console=ttyS0 vc-cma-mem=0/176M@0xCB000000
+BOARD_KERNEL_BASE := 0xa2000000
+TARGET_KERNEL_SOURCE := kernel/samsung/galaxys2plus-common
 TARGET_KERNEL_CONFIG := cyanogenmod_s2ve_defconfig
 
 # Bluetooth
