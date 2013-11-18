@@ -10,6 +10,9 @@ USE_CAMERA_STUB := true
 TARGET_KERNEL_SOURCE := kernel/samsung/galaxys2plus-common
 TARGET_KERNEL_CONFIG := cyanogenmod_s2ve_defconfig
 
+#Wifi
+BOARD_WLAN_DEVICE_REV := bcm4330_b1
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
