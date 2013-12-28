@@ -8,28 +8,28 @@ $(call inherit-product-if-exists, vendor/samsung/galaxys2plus-common/galaxys2plu
 # Use high-density artwork where available
 PRODUCT_LOCALES += hdpi
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/s2vep/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/s2ve/overlay
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/s2vep/init.capri_ss_s2vep.rc:root/init.capri_ss_s2vep.rc \
-	device/samsung/s2vep/init.bcm281x5.usb.rc:root/init.bcm281x5.usb.rc \
-	device/samsung/s2vep/init.log.rc:root/init.log.rc \
-	device/samsung/s2vep/init.recovery.capri_ss_s2vep.rc:root/init.recovery.capri_ss_s2vep.rc \
-	device/samsung/s2vep/lpm.rc:root/lpm.rc \
-	device/samsung/s2vep/ueventd.capri_ss_s2vep.rc:root/ueventd.capri_ss_s2vep.rc \
-	device/samsung/s2vep/fstab.capri_ss_s2vep:root/fstab.capri_ss_s2vep 
+	device/samsung/s2ve/init.capri_ss_s2ve.rc:root/init.capri_ss_s2vep.rc \
+	device/samsung/s2ve/init.bcm281x5.usb.rc:root/init.bcm281x5.usb.rc \
+	device/samsung/s2ve/init.log.rc:root/init.log.rc \
+	device/samsung/s2ve/init.recovery.capri_ss_s2ve.rc:root/init.recovery.capri_ss_s2vep.rc \
+	device/samsung/s2ve/lpm.rc:root/lpm.rc \
+	device/samsung/s2ve/ueventd.capri_ss_s2ve.rc:root/ueventd.capri_ss_s2vep.rc \
+	device/samsung/s2ve/fstab.capri_ss_s2ve:root/fstab.capri_ss_s2vep 
 
 PRODUCT_COPY_FILES += \
-	device/samsung/s2vep/media_codecs.xml:system/etc/media_codecs.xml \
+	device/samsung/s2ve/media_codecs.xml:system/etc/media_codecs.xml \
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/s2vep/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
-	device/samsung/s2vep/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
-	device/samsung/s2vep/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/s2vep/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
-	device/samsung/s2vep/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
+	device/samsung/s2ve/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
+	device/samsung/s2ve/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
+	device/samsung/s2ve/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+	device/samsung/s2ve/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
+	device/samsung/s2ve/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -113,31 +113,6 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# NFC packages
-PRODUCT_PACKAGES += \
-        libnfc-nci \
-        libnfc_nci_jni \
-        NfcNci \
-        Tag \
-
-PRODUCT_COPY_FILES += \
-        packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
-        frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-        frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-        $(LOCAL_PATH)/nfc/bcm2079xB4_firmware_20793.ncd:system/vendor/firmware/bcm2079xB4_firmware_20793.ncd \
-        $(LOCAL_PATH)/nfc/bcm2079xB4_pre_firmware_20793.ncd:system/vendor/firmware/bcm2079xB4_pre_firmware_20793.ncd \
-        $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-        $(LOCAL_PATH)/nfc/nfc_nci.capri.so:system/lib/hw/nfc_nci.capri.so
-
-# NFCEE access control
-ifeq ($(TARGET_BUILD_VARIANT),user)
-        NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access.xml
-else
-        NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access_debug.xml
-endif
-
-
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
@@ -145,5 +120,5 @@ $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
 
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_s2vep
-PRODUCT_DEVICE := s2vep
+PRODUCT_NAME := full_s2ve
+PRODUCT_DEVICE := s2ve

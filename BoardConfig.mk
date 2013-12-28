@@ -26,7 +26,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 4404019200
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_s2vep_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_s2ve_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/galaxys2plus-common
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -34,8 +34,8 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/s2vep/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/samsung/s2vep/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/s2ve/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/s2ve/libbt_vndcfg.txt
 
 # Connectivity - Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -62,7 +62,7 @@ BOARD_USES_SKTEXTBOX := true
 
 # Hardware rendering
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/samsung/s2vep/egl.cfg
+BOARD_EGL_CFG := device/samsung/s2ve/egl.cfg
 BOARD_USE_MHEAP_SCREENSHOT := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
@@ -73,10 +73,10 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 
 # RIL
-BOARD_RIL_CLASS := ../../../device/samsung/s2vep/ril/
+BOARD_RIL_CLASS := ../../../device/samsung/s2ve/ril/
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/s2vep/fstab.capri_ss_s2vep
+TARGET_RECOVERY_FSTAB := device/samsung/s2ve/fstab.capri_ss_s2ve
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
 
 # healthd
@@ -84,7 +84,7 @@ BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/s2vep/sepolicy
+    device/samsung/s2ve/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
