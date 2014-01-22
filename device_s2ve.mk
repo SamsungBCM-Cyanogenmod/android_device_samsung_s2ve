@@ -12,13 +12,13 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/s2ve/overlay
 
 # Init files
 PRODUCT_COPY_FILES += \
-	device/samsung/s2ve/init.capri_ss_s2ve.rc:root/init.capri_ss_s2vep.rc \
-	device/samsung/s2ve/init.bcm281x5.usb.rc:root/init.bcm281x5.usb.rc \
-	device/samsung/s2ve/init.log.rc:root/init.log.rc \
-	device/samsung/s2ve/init.recovery.capri_ss_s2ve.rc:root/init.recovery.capri_ss_s2vep.rc \
-	device/samsung/s2ve/lpm.rc:root/lpm.rc \
-	device/samsung/s2ve/ueventd.capri_ss_s2ve.rc:root/ueventd.capri_ss_s2vep.rc \
-	device/samsung/s2ve/fstab.capri_ss_s2ve:root/fstab.capri_ss_s2vep 
+	device/samsung/s2ve/ramdisk/init.capri_ss_s2ve.rc:root/init.capri_ss_s2vep.rc \
+	device/samsung/s2ve/ramdisk/init.bcm281x5.usb.rc:root/init.bcm281x5.usb.rc \
+	device/samsung/s2ve/ramdisk/init.log.rc:root/init.log.rc \
+	device/samsung/s2ve/ramdisk/init.recovery.capri_ss_s2ve.rc:root/init.recovery.capri_ss_s2vep.rc \
+	device/samsung/s2ve/ramdisk/lpm.rc:root/lpm.rc \
+	device/samsung/s2ve/ramdisk/ueventd.capri_ss_s2ve.rc:root/ueventd.capri_ss_s2vep.rc \
+	device/samsung/s2ve/ramdisk/fstab.capri_ss_s2ve:root/fstab.capri_ss_s2vep 
 
 PRODUCT_COPY_FILES += \
 	device/samsung/s2ve/media_codecs.xml:system/etc/media_codecs.xml \
@@ -116,6 +116,10 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
+
+PRODUCT_COPY_FILES += \
+        device/samsung/s2vep/vibration/haptic_vib.apk:system/app/haptic_vib.apk \
+        device/samsung/s2vep/vibration/libImmEmulatorJ.so:system/lib/libImmEmulatorJ.so
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
