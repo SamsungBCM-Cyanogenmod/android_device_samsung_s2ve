@@ -25,11 +25,11 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-	device/samsung/s2ve/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
-	device/samsung/s2ve/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
-	device/samsung/s2ve/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-	device/samsung/s2ve/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
-	device/samsung/s2ve/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
+	device/samsung/s2ve/keylayouts/bcm_headset.kl:system/usr/keylayout/bcm_headset.kl \
+	device/samsung/s2ve/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
+	device/samsung/s2ve/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+	device/samsung/s2ve/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
+	device/samsung/s2ve/keylayouts/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
