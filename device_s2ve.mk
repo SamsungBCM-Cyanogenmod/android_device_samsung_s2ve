@@ -117,10 +117,6 @@ include frameworks/native/build/phone-hdpi-512-dalvik-heap.mk
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-PRODUCT_COPY_FILES += \
-        device/samsung/s2vep/vibration/haptic_vib.apk:system/app/haptic_vib.apk \
-        device/samsung/s2vep/vibration/libImmEmulatorJ.so:system/lib/libImmEmulatorJ.so
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 $(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
