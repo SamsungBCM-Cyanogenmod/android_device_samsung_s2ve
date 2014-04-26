@@ -667,6 +667,13 @@ on property:init.svc.media=restarting
     start icd
 
 on fs
+    wait /dev/block/mmcblk0p19
+    wait /dev/block/mmcblk0p21
+    wait /dev/block/mmcblk0p18
+    wait /dev/block/mmcblk0p20
+    wait /proc/mounts
+    exec /sbin/automount
+
     mount_all /fstab.capri_ss_s2vep
     setprop ro.crypto.fuse_sdcard true
 

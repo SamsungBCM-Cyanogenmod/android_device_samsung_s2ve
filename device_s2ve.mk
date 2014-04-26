@@ -18,7 +18,12 @@ PRODUCT_COPY_FILES += \
 	device/samsung/s2ve/ramdisk/init.recovery.capri_ss_s2ve.rc:root/init.recovery.capri_ss_s2vep.rc \
 	device/samsung/s2ve/ramdisk/lpm.rc:root/lpm.rc \
 	device/samsung/s2ve/ramdisk/ueventd.capri_ss_s2ve.rc:root/ueventd.capri_ss_s2vep.rc \
-	device/samsung/s2ve/ramdisk/fstab.capri_ss_s2ve:root/fstab.capri_ss_s2vep 
+	device/samsung/s2ve/ramdisk/fstab.capri_ss_s2ve:root/fstab.capri_ss_s2vep \
+	device/samsung/s2ve/ramdisk/sbin/automount:root/sbin/automount \
+	device/samsung/s2ve/ramdisk/sbin/busybox:root/sbin/busybox \
+	device/samsung/s2ve/ramdisk/sbin/cbd:root/sbin/cbd \
+	device/samsung/s2ve/ramdisk/sbin/ffu:root/sbin/ffu \
+	device/samsung/s2ve/ramdisk/sbin/sh:root/sbin/sh 
 
 PRODUCT_COPY_FILES += \
 	device/samsung/s2ve/media_codecs.xml:system/etc/media_codecs.xml \
@@ -33,7 +38,13 @@ PRODUCT_COPY_FILES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	setup_fs
+        make_ext4fs \
+        setup_fs    
+
+PRODUCT_PACKAGES += \
+        mkfs.f2fs \
+        fsck.f2fs \
+        fibmap.f2fs
 
 # Usb accessory
 PRODUCT_PACKAGES += \
