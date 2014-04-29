@@ -48,8 +48,8 @@ on init
     mkdir   /storage/sdcard1 0700 root root
     symlink /storage/sdcard1 /external_sd
     symlink /storage/sdcard1 /mnt/external_sd
-    symlink /storage/usbdisk0 /usbdisk
-    symlink /storage/usbdisk0 /mnt/usbdisk
+    symlink /storage/usbdisk /usbdisk
+    symlink /storage/usbdisk /mnt/usbdisk
 
     mkdir /preload 0771 system system 
 
@@ -202,12 +202,12 @@ on boot
 
 # Permissions for bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
-    chown bluetooth bluetooth ro.bt.bdaddr_path
-#    chown bluetooth bluetooth /dev/ttySAC0
-#    chmod 0600 /dev/ttySAC0
+    chown bluetooth net_bt_stack ro.bt.bdaddr_path
+    chown bluetooth net_bt_stack /dev/ttyS2
+    chmod 0600 /dev/ttyS2
     chmod 0660 /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
 
     # permissions for sensors (accelerometer & magnetic & proximity)
     chown root system /dev/proximity
@@ -447,10 +447,6 @@ on boot
 
     # allow user space (atx) access to kernel pm debug
     chown system system /sys/module/capri_pm_dbg/parameters/debug
-
-#for bluetooth. permission for host interface
-    chown root bluetooth /dev/ttyS2
-    chmod 0777 /dev/ttyS2
 
     # for fm radio
     copy /system/etc/local.prop /data/local.prop

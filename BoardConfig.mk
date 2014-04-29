@@ -87,7 +87,10 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.capri
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/samsung/s2vep/cmhw/
+BOARD_HARDWARE_CLASS := device/samsung/s2ve/cmhw/
+
+# GPS
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/s2ve/include
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
