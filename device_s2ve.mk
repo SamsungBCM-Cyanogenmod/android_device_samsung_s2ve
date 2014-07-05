@@ -29,6 +29,7 @@ PRODUCT_COPY_FILES += \
 	device/samsung/s2ve/keylayouts/bcm_keypad_v2.kl:system/usr/keylayout/bcm_keypad_v2.kl \
 	device/samsung/s2ve/keylayouts/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
 	device/samsung/s2ve/keylayouts/samsung-keypad.kl:system/usr/keylayout/samsung-keypad.kl \
+	device/samsung/s2vep/keylayouts/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
 	device/samsung/s2ve/keylayouts/sii9234_rcp.kl:system/usr/keylayout/sii9234_rcp.kl
 
 # Filesystem management tools
