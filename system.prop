@@ -14,7 +14,7 @@ ro.telephony.ril_class=SamsungBCMRIL
 mobiledata.interfaces=rmnet0
 
 # Screen
-ro.sf.lcd_density=240
+ro.sf.lcd_density=220
 ro.lcd_brightness=180
 ro.lcd_min_brightness=40
 
